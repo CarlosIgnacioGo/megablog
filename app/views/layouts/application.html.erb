@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GENIAL BLOG</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<header>
+		<div id="wrapper-header">
+			<%= link_to image_tag("logo.png"), controller: "articles", action: "index", :class => "logo" %>
+		</div>
+	</header>
+
+<%= yield %>
+	<footer>
+		
+	</footer>
+</body>
+</html>

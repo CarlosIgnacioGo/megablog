@@ -1,0 +1,12 @@
+<article id="wrapper-main-blog">
+	<% @articles.each do |article|%>
+	 	<div class="wrapper-article">
+			<h3 class="title-article"><%= link_to article.title, controller: "articles", action: "show", id: article%></h3>
+			<div class="body-article"><%= truncate(article.body, :length => 150)%></div>
+			<div class="boton-leerMas">
+				
+			</div>
+		</div>
+	<%end%>
+</article>
+

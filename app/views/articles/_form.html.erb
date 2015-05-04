@@ -1,0 +1,20 @@
+<% name ||= "Error declara la variable name"%>
+<h1><%= name %></h1>
+<%= form_for(@article) do |f| %>
+	<% @article.errors.full_messages.each do |message| %>
+		<div class="error-form">
+			<%=message%>
+		</div>
+	<%end%>
+	<div>
+		<%= f.text_field :title, id: "input-title" %>
+		<label for="" class="title-input">Titulo del articulo</label>
+	</div>
+	<div>
+		<%= f.text_area :body, id: "input-body" %>
+		<label for="" class="title-input">Escribe aqui el articulo</label>
+	</div>
+	<div>
+		<%= f.submit "Guardar", id: "input-boton"%>
+	</div>
+<%end%>
