@@ -1,0 +1,12 @@
+<header>
+	<div id="wrapper-header">
+		<%= link_to image_tag("logo.png"), articles_path %>
+		<% if user_signed_in? %>
+			<div><%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %></div>
+			<div class="user-nav"><%= current_user.email %></div>
+		<%else%>
+			<div><%= link_to "Iniciar sesion", new_user_session_path %></div>
+			<div><%= link_to "Crear cuenta", new_user_registration_path %></div>
+		<%end%>
+	</div>
+</header>
