@@ -216,6 +216,15 @@ footer{
 			width: 1000px;
 		}
 
+		.user-show{
+			color: white;
+			background: rgba(0,0,0,0.24);
+			padding: 5px;
+			border-radius: 16px;
+			width: 480px;
+		    margin: 20px auto 10px auto;
+		}
+
 		.body-show{
 			color: #6E6E6E;
 			line-height: 33px;

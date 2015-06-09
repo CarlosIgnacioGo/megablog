@@ -1,7 +1,8 @@
 class ArticlesController < ApplicationController
+	before_action :authenticate_user!, except: [:show,:index]
 	#GET /articles
 	def index
-		@articles = Article.all
+		@articles = Article.all.order(created_at: :desc)
 	end
 
 	#GET /articles:id
@@ -19,7 +20,7 @@ class ArticlesController < ApplicationController
 	end
 	#POST /articles
 	def create
-		@article = Article.new(article_params)
+		@article = current_user.articles.new(article_params)
 
 		if @article.save
 			redirect_to @article
@@ -38,6 +39,7 @@ class ArticlesController < ApplicationController
 	end
 
 	private
+
 	def article_params
 		params.require(:article).permit(:title,:body)
 	end
