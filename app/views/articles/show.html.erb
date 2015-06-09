@@ -2,8 +2,21 @@
 	<h3 class="title-show"><%= @article.title %></h3>
 	<% unless @article.user.nil? %>
 		<p class="user-show">Escrito por: <%= @article.user.email %></p>
+
 	<%end%>
+	<%= link_to "editar", edit_article_path(@article) %>
 </div>
 <div id="wrapper-post-show">
 	<div class="body-show"><%= @article.body %></div>
+</div>
+<div>
+	<h3>Comentarios</h3>
+	<%= render "comments/form" %>
+	<ul>
+		<% @article.comments.each do |comment| %>
+			<li>
+				<%= comment.body %> - <%= comment.user.email %>
+			</li>
+		<%end%>
+	</ul>
 </div>
